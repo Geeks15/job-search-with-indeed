@@ -33,7 +33,7 @@ class Deck extends Component{
                 
             } 
          });
-         this.state = { panResponder, position, index: 0 }
+         this.state = { panResponder, position, index: 0,jobs:  [] }
 
     }
     
@@ -55,25 +55,27 @@ this.setState({index:this.state.index+1})
         }
     }
     renderAllCards(){
-        return this.props.data.map((item, i) => 
+        let jobs =  this.props.data.map((item, i) => 
         {   if(i<this.state.index)
                 return null
             else if(i==this.state.index){
                 return (<Animated.View 
-                    key={item.id}
-                    style= {[this.getCardStyle(),{position:'absolute',width:SCREEN_WIDTH},{ zIndex: 6 }]}
+                    key={item.jobkey}
+                    style= {[this.getCardStyle()]}
                     {...this.state.panResponder.panHandlers}
                     > 
 
-            {this.props.renderDeck(item)}
+            {this.props.renderCard(item)}
                     </Animated.View>)
             } else{
                 return  (
-                    <Animated.View key={item.id} style ={{position:'absolute',width:SCREEN_WIDTH,top: 10 *(i-this.state.index),zIndex: 5 }}>{ this.props.renderDeck(item)}</Animated.View>
+                    <Animated.View key={item.jobkey} style ={{position:'absolute',width:SCREEN_WIDTH,top: 10 *(i-this.state.index),zIndex: 5 }}>{ this.props.renderCard(item)}</Animated.View>
                 );
                    
             }
-        }).reverse()}
+        })
+        return jobs.reverse();
+    }
 
     render(){
         return (

@@ -1,8 +1,42 @@
 {
-    "apiKey": "AIzaSyCtBxg6y-5vSnmQIJ7fjeD_VvfP4nJyvOc",
-    "authDomain": "jobs-4a386.firebaseapp.com",
-    "databaseURL": "https://jobs-4a386.firebaseio.com",
-    "projectId": "jobs-4a386",
-    "storageBucket": "jobs-4a386.appspot.com",
-    "messagingSenderId": "1077827121831"
-  }
+  "project_info": {
+    "project_number": "1077827121831",
+    "firebase_url": "https://jobs-4a386.firebaseio.com",
+    "project_id": "jobs-4a386",
+    "storage_bucket": "jobs-4a386.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1077827121831:android:c5f5a74d69b25ced",
+        "android_client_info": {
+          "package_name": "com.amir.jobs"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1077827121831-gfc44jnjdeq1gvsm5dc5qjnim8hbgkjb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDomhtsl3Bf6WbrltGj5cChK0NboILYoEM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -8,12 +8,11 @@ class AuthScreen extends Component{
         this.props.facebookLogin();
         AsyncStorage.removeItem('fb_token');
         this.onAuthComplete(this.props);
-        //console.log(`componentDidMount`);
+       
      }
     componentWillReceiveProps(nextProps){
         this.onAuthComplete(nextProps);
-        //console.log(`componentWillReceiveProps`);
-    }
+   }
     onAuthComplete(props){
 
         if(props.token)

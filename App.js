@@ -3,8 +3,10 @@ import {createBottomTabNavigator,createAppContainer, createStackNavigator} from 
 import {Platform} from 'react-native';
 import { Provider } from 'react-redux';
 import { Notifications } from 'expo';
+import {Icon} from 'react-native-elements';
 
-import store from './store/store'; 
+
+import {store} from './store/store'; 
 
 import registerForNotifications from './services/notification';
 import WelcomeScreen from './screens/WelcomeScreen';
@@ -13,6 +15,7 @@ import MapScreen from './screens/MapScreen';
 import DeckScreen from './screens/DeckScreen';
 import SettingsScreen from './screens/SettingScreen';
 import ReviewScreen from './screens/ReviewScreen.js';
+
     
 
 
@@ -25,11 +28,22 @@ const MainNavigator = createStackNavigator({
           Deck: { screen : DeckScreen},
           review: {
             screen: createStackNavigator({
-              review: { screen : ReviewScreen },
+              Review: { screen : ReviewScreen },
               settings: {screen : SettingsScreen }
               
             })
           }
+        },{
+          defaultNavigationOptions: ({ navigation }) => ({
+            tabBarLabel: 'Favorites',
+            tabBarIcon: ({tintColor }) => {
+          
+             // let iconName = `ios-information-circle${focused ? '' : '-outline'}`;
+              // You can return any component that you like here! We usually use an
+              // icon component from react-native-vector-icons
+              return <Icon name="favorite" size={30} color={tintColor} />;
+            },
+          })
         })
       }
     
@@ -64,6 +78,10 @@ export default class App extends React.Component {
     this._notificationSubscription = Notifications.addListener(()=>{});
   }
   render() {
-    return <Provider store={store}><AppContainer style={{flex:1}}/></Provider>;
+    return <Provider store={store}>
+ 
+    <AppContainer style={{flex:1}}/>
+ 
+    </Provider>;
   }
 }

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import {View,Text,AsyncStorage} from 'react-native';
-import {AppLoading} from 'expo';
+import {View,AsyncStorage} from 'react-native';
+
 
 import Slides from './../components/Slides';
 
@@ -16,9 +16,8 @@ class WelcomeScreen extends Component{
     async componentWillMount(){
       // AsyncStorage.removeItem('fb_token');
         let token = await AsyncStorage.getItem('token');
-         console.log(`token is: ${token}`);
+       
         if(token){
-            console.log(`token is: ${token}`)
             this.setState({token})
             this.props.navigation.navigate('Map');
         }
@@ -29,9 +28,7 @@ class WelcomeScreen extends Component{
         this.props.navigation.navigate('auth');
     }
     render(){
-        if(!this.state.token)
-            return <AppLoading />
-        else
+        
          return (
             <View>
                 <Slides data={SLIDE_DATA} onSlidesComplete={this.onSlidesComplete}/>

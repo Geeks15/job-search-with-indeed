@@ -8,7 +8,7 @@
     "platforms": ["ios", "android"],
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/jobs.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -24,7 +24,7 @@
       "supportsTablet": true
     },
     "android":{
-      "package": "amirsuhail.jobs.expo",
+      "package": "com.amir.jobs",
       "googleServicesFile":"./google-services.json"
 
     
