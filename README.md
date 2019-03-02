@@ -7,4 +7,4 @@ Functionalities:
 
 1. User can search jobs at their current location.
 2. User can save jobs that he/she likes for future review.
-3. user can apply for the job using their indeed.co.in profile.
+3. User can apply for the job using their indeed.co.in profile.
