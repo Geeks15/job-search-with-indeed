@@ -9,7 +9,7 @@ Functionalities:
 2. User can save jobs that he/she likes for future review.
 3. User can apply for the job using their indeed.co.in profile.
 
-Tech Stack used: 
+# Tech Stack 
 
 1. React
 2. React Native
